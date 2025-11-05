@@ -46,7 +46,7 @@ const Contact = () => {
     });
   };
 
-  const whatsappNumber = "919876543210"; // Without + symbol
+  const whatsappNumber = "919835393173"; // Without + symbol
   const whatsappMessage = "Hi, I'm interested in your recruitment services.";
 
   return (
@@ -54,8 +54,8 @@ const Contact = () => {
       {/* Page Banner */}
       <section className="gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 ">Con<span className="text-[#00CFE6]">tact Us</span></h1>
+          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
             Get in touch with our team. We're here to help with your staffing needs.
           </p>
         </div>
@@ -148,10 +148,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Email Us</h3>
                       <a
-                        href="mailto:contact@talentbridge.com"
+                        href="mailto:contact@itrecruitment.com"
                         className="text-primary hover:underline"
                       >
-                        contact@talentbridge.com
+                        contact@itrecruitment.com
                       </a>
                     </div>
                   </div>
@@ -163,7 +163,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Call Us</h3>
                       <a href="tel:+919876543210" className="text-primary hover:underline">
-                        +91 9876543210
+                        +91 9835393173
                       </a>
                       <p className="text-sm text-muted-foreground">Mon-Fri, 9:00 AM - 6:00 PM IST</p>
                     </div>
@@ -177,7 +177,7 @@ const Contact = () => {
                       <h3 className="font-semibold mb-1">Visit Us</h3>
                       <p className="text-muted-foreground">
                         Tech Park, Cyber City,<br />
-                        Bangalore - 560001, India
+                        Hyderabad - 500001, India
                       </p>
                     </div>
                   </div>
@@ -187,14 +187,14 @@ const Contact = () => {
               {/* Map Embed */}
               <div className="bg-card border border-border rounded-xl overflow-hidden shadow-card">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d77.6!3d12.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzEyLjYiTiA3N8KwMzYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.60773653459!2d78.47442187474193!3d17.385043973678458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99da0f243173%3A0x71ff07b85a3d8003!2sCyber%20City%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1730734802461!5m2!1sen!2sin"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="TalentBridge Office Location"
+                  title="IT Recruitment Office Location"
                 ></iframe>
               </div>
             </div>

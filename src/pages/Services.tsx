@@ -71,8 +71,8 @@ const Services = () => {
       {/* Page Banner */}
       <section className="gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our <span className="text-[#00CFE6]">Services</span></h1>
+          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
             Comprehensive staffing and recruitment solutions tailored to your business needs
           </p>
         </div>
@@ -123,15 +123,15 @@ const Services = () => {
       {/* CTA Section */}
       <section className="gradient-primary py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4 bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
             Ready to Get Started?
           </h2>
-          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
             Contact us today to discuss your staffing requirements and get customized solutions.
           </p>
           <Link to="/contact">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg">
-              Contact Our Team
+            <Button size="lg" className="bg-[#ffffff] hover:bg-accent/90 text-accent-foreground group px-8 py-6 text-lg">
+              Contact Us Today  
             </Button>
           </Link>
         </div>

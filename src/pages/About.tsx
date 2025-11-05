@@ -22,20 +22,20 @@ const About = () => {
 
   const leaders = [
     {
-      name: "Vikram Mehta",
+      name: "Sanjay Kumar",
       designation: "Founder & CEO",
       bio: "15+ years in IT recruitment with expertise in building high-performing teams for Fortune 500 companies.",
     },
     {
-      name: "Sneha Kapoor",
-      designation: "Head of Operations",
-      bio: "Specialized in RPO and contract staffing with a track record of delivering 1000+ successful placements.",
+      name: "Sanjay Kumar",
+      designation: "Founder & CEO",
+      bio: "15+ years in IT recruitment with expertise in building high-performing teams for Fortune 500 companies.",
     },
     {
-      name: "Arjun Singh",
-      designation: "Director - Technology Recruitment",
-      bio: "Expert in technical hiring with deep understanding of emerging technologies and skill assessment.",
-    },
+      name: "Sanjay Kumar",
+      designation: "Founder & CEO",
+      bio: "15+ years in IT recruitment with expertise in building high-performing teams for Fortune 500 companies.",
+    }
   ];
 
   return (
@@ -43,8 +43,8 @@ const About = () => {
       {/* Page Banner */}
       <section className="gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About TalentBridge</h1>
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">About <span className="text-[#00CFE6]">IT Recruitment</span></h1>
+          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
             Your trusted partner in IT recruitment and staffing solutions across India
           </p>
         </div>
@@ -159,18 +159,18 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                city: "Bangalore",
-                address: "Tech Park, Cyber City, Bangalore - 560001",
+                city: "Hyderabad",
+                address: "Tech Park, Cyber City, Hyderabad - 500001",
                 isHQ: true,
               },
               {
-                city: "Mumbai",
-                address: "Business Center, Andheri East, Mumbai - 400069",
+                city: "Bangalore",
+                address: "Business Center, Andheri East, Bangalore - 560001",
                 isHQ: false,
               },
               {
-                city: "Pune",
-                address: "IT Hub, Hinjewadi Phase 1, Pune - 411057",
+                city: "Mumbai",
+                address: "IT Hub, Hinjewadi Phase 1, Mumbai - 400069",
                 isHQ: false,
               },
             ].map((location, index) => (

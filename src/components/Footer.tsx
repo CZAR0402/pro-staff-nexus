@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                 <Users className="h-6 w-6 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold">TalentBridge</span>
+              <span className="text-xl font-bold">IT Recruitment</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
               Professional IT recruitment and staffing solutions across India. Your trusted partner in talent acquisition.
@@ -75,16 +75,16 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2">
                 <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">contact@talentbridge.com</span>
+                <span className="text-sm text-muted-foreground">contact@itrecruitment.com</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Phone className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">+91 9876543210</span>
+                <span className="text-sm text-muted-foreground">+91 9835393173</span>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-muted-foreground">
-                  Tech Park, Cyber City,<br />Bangalore - 560001, India
+                  Tech Park, Cyber City,<br />Hyderabad - 500001, India
                 </span>
               </li>
             </ul>
@@ -93,7 +93,7 @@ const Footer = () => {
 
         <div className="border-t mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} TalentBridge. All rights reserved.
+            © {new Date().getFullYear()} IT Recruitment. All rights reserved.
           </p>
         </div>
       </div>

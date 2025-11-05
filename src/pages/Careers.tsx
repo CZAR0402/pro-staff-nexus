@@ -76,8 +76,8 @@ const Careers = () => {
       {/* Page Banner */}
       <section className="gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Submit Your Resume</h1>
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Submit Y<span className="text-[#00CFE6]">our Resume</span></h1>
+          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
             Join our talent pool and get connected with top companies across India
           </p>
         </div>
@@ -139,7 +139,7 @@ const Careers = () => {
                       <Input
                         id="phone"
                         type="tel"
-                        placeholder="+91 9876543210"
+                        placeholder="+91 98xxxxx21x"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         required

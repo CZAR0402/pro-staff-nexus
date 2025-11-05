@@ -26,7 +26,7 @@ const Header = () => {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
               <Users className="h-6 w-6 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold text-foreground">TalentBridge</span>
+            <span className="text-xl font-bold text-foreground">IT Recruitment</span>
           </Link>
 
           {/* Desktop Navigation */}

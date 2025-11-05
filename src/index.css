@@ -47,9 +47,9 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 40%) 0%, hsl(217 85% 55%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 40%) 0%, hsl(210 85% 50%) 100%);
-    --gradient-light: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 100% 98%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 25%), hsl(217 91% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 20%) 0%, hsl(217 91% 35%) 50%, hsl(186 100% 45%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(186 100% 45%), hsl(217 91% 45%));
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(217 91% 40% / 0.05);
@@ -132,6 +132,19 @@ All colors MUST be HSL.
     background: var(--gradient-hero);
   }
 
+  /* Alias class for background gradient usage */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Gradient text utility */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   .gradient-light {
     background: var(--gradient-light);
   }
@@ -146,5 +159,24 @@ All colors MUST be HSL.
 
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+
+  /* Simple fade-in animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
   }
 }
