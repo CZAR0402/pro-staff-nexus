@@ -108,8 +108,8 @@ const Home = () => {
       <section id="services" className="py-20 bg-gradient-light">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Our Services</h2>
+            <p className="text-lg text-black max-w-2xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
               Comprehensive staffing solutions tailored to your business needs
             </p>
           </div>
@@ -125,8 +125,8 @@ const Home = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Industries We Serve</h2>
-            <p className="text-lg text-muted-foreground">
+            <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Industries We Serve</h2>
+            <p className="text-lg text-black max-w-2xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
               Specialized recruitment across diverse sectors
             </p>
           </div>
@@ -134,9 +134,9 @@ const Home = () => {
             {industries.map((industry, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center p-6 rounded-xl bg-secondary border border-border hover:shadow-card transition-all"
+                className="group flex flex-col items-center justify-center p-6 rounded-xl bg-secondary border border-border hover:bg-card hover:shadow-card hover:border-primary/30 transform hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300"
               >
-                <industry.icon className="h-12 w-12 text-primary mb-3" />
+                <industry.icon className="h-12 w-12 text-primary mb-3 transition-colors duration-300 group-hover:text-primary" />
                 <p className="text-sm font-medium text-center">{industry.name}</p>
               </div>
             ))}
@@ -148,8 +148,8 @@ const Home = () => {
       <section className="py-20 bg-gradient-light">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
-            <p className="text-lg text-muted-foreground">
+            <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Why Choose Us</h2>
+            <p className="text-lg text-black max-w-2xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
               What sets us apart in IT recruitment
             </p>
           </div>
@@ -165,7 +165,7 @@ const Home = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+            <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">What Our Clients Say</h2>
             <p className="text-lg text-muted-foreground">
               Trusted by leading companies across India
             </p>
@@ -174,7 +174,7 @@ const Home = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl p-6 hover:shadow-card transition-all"
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-card hover:border-primary/30 transform hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300"
               >
                 <Quote className="h-8 w-8 text-primary mb-4" />
                 <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
@@ -198,7 +198,7 @@ const Home = () => {
             Get started with India's leading IT recruitment partner. Fast, reliable, and professional staffing solutions.
           </p>
           <Link to="/contact">
-            <Button size="lg" className="bg-[#ffffff] hover:bg-accent/90 text-accent-foreground group px-8 py-6 text-lg">
+            <Button size="lg" className="bg-[#ffffff] hover:bg-accent/90 text-accent-foreground group px-8 py-6 text-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
               Contact Us Today
             </Button>
           </Link>

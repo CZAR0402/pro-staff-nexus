@@ -38,6 +38,27 @@ const About = () => {
     }
   ];
 
+  const locationsData = [
+
+    {
+      city: "Hyderabad",
+      address: "Tech Park, Cyber City, Hyderabad - 500001",
+      isHQ: true,
+    },
+ 
+  {
+      city: "Bangalore",
+      address: "Business Center, Andheri East, Bangalore - 560001",
+      isHQ: false,
+    },
+
+    {
+      city: "Mumbai",
+      address: "IT Hub, Hinjewadi Phase 1, Mumbai - 400069",
+      isHQ: false,
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Page Banner */}
@@ -55,7 +76,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Who We Are</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Who We Are</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   TalentBridge is a leading IT recruitment and staffing company with over a decade of experience in connecting top talent with leading organizations across India. We specialize in IT, BPO, Engineering, Healthcare, and Finance sectors.
@@ -107,12 +128,12 @@ const About = () => {
       <section className="py-20 bg-gradient-light">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Foundation</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Our Foundation</h2>
             <p className="text-lg text-muted-foreground">
               The principles that guide everything we do
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 ">
             {values.map((value, index) => (
               <FeatureCard key={index} {...value} />
             ))}
@@ -124,7 +145,7 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Leadership Team</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Leadership Team</h2>
             <p className="text-lg text-muted-foreground">
               Meet the experts driving our success
             </p>
@@ -133,7 +154,7 @@ const About = () => {
             {leaders.map((leader, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-card transition-all"
+                className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-card hover:border-primary/30 transform hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300"
               >
                 <div className="h-64 bg-gradient-primary"></div>
                 <div className="p-6">
@@ -151,32 +172,16 @@ const About = () => {
       <section className="py-20 bg-gradient-light">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Locations</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Our Locations</h2>
             <p className="text-lg text-muted-foreground">
               Serving clients across India with local expertise
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                city: "Hyderabad",
-                address: "Tech Park, Cyber City, Hyderabad - 500001",
-                isHQ: true,
-              },
-              {
-                city: "Bangalore",
-                address: "Business Center, Andheri East, Bangalore - 560001",
-                isHQ: false,
-              },
-              {
-                city: "Mumbai",
-                address: "IT Hub, Hinjewadi Phase 1, Mumbai - 400069",
-                isHQ: false,
-              },
-            ].map((location, index) => (
+            {locationsData.map((location, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl p-6 hover:shadow-card transition-all"
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-card hover:border-primary/30 transform hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300"
               >
                 <div className="flex items-start space-x-4 mb-4">
                   <MapPin className="h-6 w-6 text-primary flex-shrink-0" />

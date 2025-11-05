@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Code, Users, Building2, HeadphonesIcon, Settings, Check } from "lucide-react";
+import ItStaffing from "@/assets/IT-Staffing.png";
+import contractStaffing from "@/assets/contract-staffing.webp";
+import rpo from "@/assets/rpo.jpeg";
+import offShore from "@/assets/offshore.webp";
 
 const Services = () => {
   const services = [
     {
       icon: Code,
       title: "IT Recruitment & Staffing",
+      img:ItStaffing,
       description: "Find the perfect IT professionals to drive your technology initiatives forward.",
       benefits: [
         "Full-stack developers, data scientists, cloud architects",
@@ -19,6 +24,7 @@ const Services = () => {
     {
       icon: Users,
       title: "Contract Staffing",
+      img:contractStaffing,
       description: "Flexible staffing solutions for project-based and temporary assignments.",
       benefits: [
         "Short-term and long-term contract placements",
@@ -31,6 +37,7 @@ const Services = () => {
     {
       icon: Building2,
       title: "Recruitment Process Outsourcing (RPO)",
+      img:rpo,
       description: "Complete end-to-end recruitment management for your organization.",
       benefits: [
         "Dedicated recruitment team for your company",
@@ -43,6 +50,7 @@ const Services = () => {
     {
       icon: HeadphonesIcon,
       title: "HR Consulting",
+      img:ItStaffing,
       description: "Strategic HR advisory services to optimize your talent management.",
       benefits: [
         "Talent acquisition strategy development",
@@ -55,6 +63,7 @@ const Services = () => {
     {
       icon: Settings,
       title: "Offshore Development Support",
+      img:offShore,
       description: "Build and manage dedicated offshore development teams.",
       benefits: [
         "Dedicated offshore development centers",
@@ -111,29 +120,12 @@ const Services = () => {
                 </div>
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                   <div className="bg-gradient-light rounded-2xl p-8 lg:p-12 shadow-card h-full flex items-center justify-center">
-                    <service.icon className="h-48 w-48 text-primary/20" />
+                    <img src={service.img} alt={service.title} className="h-full w-full object-cover rounded-2xl" />
                   </div>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="gradient-primary py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4 bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
-            Ready to Get Started?
-          </h2>
-          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
-            Contact us today to discuss your staffing requirements and get customized solutions.
-          </p>
-          <Link to="/contact">
-            <Button size="lg" className="bg-[#ffffff] hover:bg-accent/90 text-accent-foreground group px-8 py-6 text-lg">
-              Contact Us Today  
-            </Button>
-          </Link>
         </div>
       </section>
     </div>
