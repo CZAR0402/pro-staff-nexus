@@ -92,7 +92,7 @@ const About = () => {
             <div className="bg-gradient-light rounded-2xl p-8 lg:p-12 shadow-card">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary flex-shrink-0">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-primary flex-shrink-0">
                     <span className="text-2xl font-bold text-primary-foreground">10+</span>
                   </div>
                   <div>
@@ -101,7 +101,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary flex-shrink-0">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-primary flex-shrink-0">
                     <span className="text-2xl font-bold text-primary-foreground">5K+</span>
                   </div>
                   <div>
@@ -110,7 +110,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary flex-shrink-0">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-primary flex-shrink-0">
                     <span className="text-2xl font-bold text-primary-foreground">200+</span>
                   </div>
                   <div>
@@ -154,7 +154,7 @@ const About = () => {
             {leaders.map((leader, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-card hover:border-primary/30 transform hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300"
+                className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-card transition-all"
               >
                 <div className="h-64 bg-gradient-primary"></div>
                 <div className="p-6">
