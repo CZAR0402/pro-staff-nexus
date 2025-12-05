@@ -10,6 +10,8 @@ import Services from "./pages/Services";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import DataSecurity from "./pages/DataSecurity";
+import GetStarted from "./pages/GetStarted";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -20,7 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -28,6 +30,8 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/data-security" element={<DataSecurity />} />
+            <Route path="/get-started" element={<GetStarted />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

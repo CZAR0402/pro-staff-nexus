@@ -1,209 +1,328 @@
+// src/pages/Careers.tsx
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Upload, CheckCircle2 } from "lucide-react";
+import {
+  Users,
+  Briefcase,
+  Star,
+  Trophy,
+  BookOpen,
+  HeartHandshake,
+  ArrowRight,
+} from "lucide-react";
 
 const Careers = () => {
   const { toast } = useToast();
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     email: "",
     phone: "",
-    skills: "",
+    role: "",
     experience: "",
-    resume: null as File | null,
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
-    if (!formData.fullName || !formData.email || !formData.phone || !formData.resume) {
+    if (!formData.name || !formData.email || !formData.role) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields and upload your resume.",
+        title: "Missing information",
+        description: "Please fill in at least your name, email, and role of interest.",
         variant: "destructive",
       });
       return;
     }
 
-    // Simulate form submission
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-    
+    console.log("Career application submitted:", formData);
     toast({
-      title: "Resume Submitted Successfully!",
-      description: "Our team will review your profile and get back to you soon.",
+      title: "Application submitted!",
+      description: "Thank you for applying. The team will review your profile.",
     });
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        skills: "",
-        experience: "",
-        resume: null,
-      });
-    }, 3000);
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const allowedTypes = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
-      if (!allowedTypes.includes(file.type)) {
-        toast({
-          title: "Invalid File Type",
-          description: "Please upload a PDF or DOC file.",
-          variant: "destructive",
-        });
-        return;
-      }
-      setFormData({ ...formData, resume: file });
-    }
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      role: "",
+      experience: "",
+      message: "",
+    });
   };
 
   return (
     <div className="min-h-screen">
-      {/* Page Banner */}
+      {/* Banner */}
       <section className="gradient-hero text-primary-foreground py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Submit Y<span className="text-[#00CFE6]">our Resume</span></h1>
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
-            Join our talent pool and get connected with top companies across India
+        <div className="container mx-auto px-4 text-center max-w-3xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Careers at <span className="text-[#00CFE6]">TechRuitz</span>
+          </h1>
+          <p className="text-lg md:text-xl text-primary-foreground/90">
+            Build your career with a company that powers the future of operations outsourcing for
+            global consulting firms, staffing agencies, and tech businesses.
           </p>
         </div>
       </section>
 
-      {/* Form Section */}
-      <section className="py-20 bg-gradient-light">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <Card className="shadow-xl border-border">
+      {/* Main */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 grid lg:grid-cols-[3fr,2fr] gap-10 items-start">
+          {/* Left: Info */}
+          <div className="space-y-8">
+            <Card className="border-border shadow-card">
               <CardHeader>
-                <CardTitle className="text-2xl">Career Application</CardTitle>
+                <CardTitle className="flex items-center gap-2">
+                  <Users className="h-5 w-5 text-[#00CFE6]" />
+                  Why Work at TechRuitz?
+                </CardTitle>
                 <CardDescription>
-                  Fill in your details and upload your resume. We'll match you with relevant opportunities.
+                  If you&apos;re ambitious, proactive, and passionate about delivering excellence,
+                  this is your place.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                {isSubmitted ? (
-                  <div className="text-center py-12">
-                    <CheckCircle2 className="h-16 w-16 text-success mx-auto mb-4" />
-                    <h3 className="text-2xl font-semibold mb-2">Thank You!</h3>
-                    <p className="text-muted-foreground">
-                      Your resume has been submitted successfully. We'll be in touch soon.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="fullName">
-                        Full Name <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
-                        id="fullName"
-                        placeholder="John Doe"
-                        value={formData.fullName}
-                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        required
-                      />
-                    </div>
+              <CardContent className="space-y-3 text-sm text-muted-foreground">
+                <div className="flex items-start gap-2">
+                  <Star className="h-4 w-4 text-[#00CFE6] mt-1" />
+                  <p>
+                    <span className="font-semibold text-foreground">Work with global clients</span>{" "}
+                    – Experience projects, workflows, and technologies used across the globe.
+                  </p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Trophy className="h-4 w-4 text-[#00CFE6] mt-1" />
+                  <p>
+                    <span className="font-semibold text-foreground">Grow faster than average</span>{" "}
+                    – Clear growth paths, performance-based incentives, and responsibilities from
+                    Day 1.
+                  </p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <BookOpen className="h-4 w-4 text-[#00CFE6] mt-1" />
+                  <p>
+                    <span className="font-semibold text-foreground">Learn across functions</span>{" "}
+                    – Recruiting, HR, documentation, billing, social media, operations, and more.
+                  </p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <HeartHandshake className="h-4 w-4 text-[#00CFE6] mt-1" />
+                  <p>
+                    <span className="font-semibold text-foreground">
+                      Stable, high-trust environment
+                    </span>{" "}
+                    – Supportive leadership, transparency, and a performance-driven culture.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="email">
-                        Email <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="john@example.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
-                      />
-                    </div>
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle>Who We Hire</CardTitle>
+                <CardDescription>
+                  We look for people who can thrive in a global, fast-paced, outcome-driven setup.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground space-y-2">
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Fast learners</li>
+                  <li>Excellent communicators</li>
+                  <li>Comfortable working with global clients</li>
+                  <li>Organised and detail-oriented</li>
+                  <li>Professional, reliable, and growth-focused</li>
+                </ul>
+                <p className="text-xs mt-2">
+                  No politics. No micromanagement. Just performance, growth, and teamwork.
+                </p>
+              </CardContent>
+            </Card>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">
-                        Phone Number <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        placeholder="+91 98xxxxx21x"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        required
-                      />
-                    </div>
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle>Current Open Roles</CardTitle>
+                <CardDescription>
+                  Roles may vary over time—this is a typical snapshot of opportunities.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-1">
+                    Talent Acquisition Specialists
+                  </h4>
+                  <p>Sourcing, screening, and scheduling for global staffing clients.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-1">
+                    HR / Operations Executives
+                  </h4>
+                  <p>Onboarding, documentation, attendance, and client coordination.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-1">
+                    Documentation Analysts
+                  </h4>
+                  <p>RFPs, proposals, and project documentation with strong written English.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-1">
+                    Admin & Back-Office Specialists
+                  </h4>
+                  <p>Support functions that keep everyday operations running smoothly.</p>
+                </div>
+              </CardContent>
+            </Card>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="skills">Key Skills</Label>
-                      <Textarea
-                        id="skills"
-                        placeholder="React, Node.js, Python, AWS..."
-                        value={formData.skills}
-                        onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
-                        rows={3}
-                      />
-                    </div>
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle>What We Offer</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground space-y-1">
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Competitive salaries aligned with skills and performance</li>
+                  <li>Performance bonuses and rewards</li>
+                  <li>Skill development and structured training programs</li>
+                  <li>Healthy work–life balance</li>
+                  <li>Safe, secure, and transparent HR policies</li>
+                  <li>Professional, respectful, and growth-focused culture</li>
+                </ul>
+              </CardContent>
+            </Card>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="experience">
-                        Years of Experience
-                      </Label>
-                      <Input
-                        id="experience"
-                        placeholder="5 years"
-                        value={formData.experience}
-                        onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
-                      />
-                    </div>
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle>Our Hiring Process</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground space-y-1">
+                <ol className="list-decimal list-inside space-y-1">
+                  <li>Application review</li>
+                  <li>Screening call</li>
+                  <li>Skills / task assessment (role-dependent)</li>
+                  <li>Final interview</li>
+                  <li>Offer & onboarding</li>
+                </ol>
+              </CardContent>
+            </Card>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="resume">
-                        Upload Resume <span className="text-destructive">*</span>
-                      </Label>
-                      <div className="relative">
-                        <Input
-                          id="resume"
-                          type="file"
-                          accept=".pdf,.doc,.docx"
-                          onChange={handleFileChange}
-                          className="cursor-pointer"
-                          required
-                        />
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                          <Upload className="h-5 w-5 text-muted-foreground" />
-                        </div>
-                      </div>
-                      <p className="text-xs text-muted-foreground">
-                        Accepted formats: PDF, DOC, DOCX (Max 5MB)
-                      </p>
-                      {formData.resume && (
-                        <p className="text-sm text-success">
-                          ✓ {formData.resume.name}
-                        </p>
-                      )}
-                    </div>
-
-                    <Button type="submit" className="w-full gradient-primary" size="lg">
-                      Submit Application
-                    </Button>
-                  </form>
-                )}
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle>Life at TechRuitz</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground space-y-2">
+                <p>
+                  It&apos;s not just a workplace—it&apos;s a community of achievers. You grow, you
+                  lead, you excel.
+                </p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Celebrations and festivals</li>
+                  <li>Skill development sessions</li>
+                  <li>Monthly performance appreciation</li>
+                  <li>Real mentorship and guidance</li>
+                  <li>Friendly, outcome-driven culture</li>
+                </ul>
               </CardContent>
             </Card>
           </div>
+
+          {/* Right: Apply Form */}
+          <Card className="border-border shadow-card">
+            <CardHeader>
+              <CardTitle className="flex items-center justify-between">
+                <span>Apply Now</span>
+                <ArrowRight className="h-4 w-4 text-[#00CFE6]" />
+              </CardTitle>
+              <CardDescription>
+                Share your details and we&apos;ll reach out when there&apos;s a strong match.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-4 text-sm">
+                <div className="space-y-2">
+                  <Label htmlFor="name">
+                    Full Name <span className="text-destructive">*</span>
+                  </Label>
+                  <Input
+                    id="name"
+                    placeholder="Enter your name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">
+                    Email <span className="text-destructive">*</span>
+                  </Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone</Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder="+91..."
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="role">
+                    Role You&apos;re Interested In{" "}
+                    <span className="text-destructive">*</span>
+                  </Label>
+                  <Input
+                    id="role"
+                    placeholder="e.g. Talent Acquisition Specialist"
+                    value={formData.role}
+                    onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="experience">Years of Experience</Label>
+                  <Input
+                    id="experience"
+                    placeholder="e.g. 2 years"
+                    value={formData.experience}
+                    onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message">A Short Note About You</Label>
+                  <Textarea
+                    id="message"
+                    rows={4}
+                    placeholder="Share a quick summary of your experience and what you're looking for."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  />
+                </div>
+
+                <Button type="submit" className="w-full gradient-primary">
+                  Submit Application
+                </Button>
+
+                <p className="text-xs text-muted-foreground mt-2">
+                  You can also{" "}
+                  <Link to="/" className="underline">
+                    connect with us on LinkedIn
+                  </Link>{" "}
+                  for future opportunities.
+                </p>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>

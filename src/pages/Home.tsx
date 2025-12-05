@@ -1,207 +1,230 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import ServiceCard from "@/components/ServiceCard";
+import { Card, CardContent } from "@/components/ui/card";
 import FeatureCard from "@/components/FeatureCard";
 import {
-  Code,
   Users,
   Building2,
-  HeadphonesIcon,
-  Settings,
-  Zap,
-  Shield,
-  MapPin,
-  UserCheck,
-  Laptop,
-  Briefcase,
-  Heart,
-  DollarSign,
-  Wrench,
-  Quote,
+  Clock,
+  TrendingUp,
+  ShieldCheck,
+  Headset,
+  ListChecks,
+  BarChart3,
 } from "lucide-react";
 import Hero from "@/components/Hero";
 
 const Home = () => {
-  const services = [
-    {
-      icon: Code,
-      title: "IT Recruitment & Staffing",
-      description: "Find top IT professionals for your technology initiatives. Expert vetting and fast placement.",
-    },
+  const perks = [
     {
       icon: Users,
-      title: "Contract Staffing",
-      description: "Flexible staffing solutions for short-term and long-term projects with skilled professionals.",
+      title: "Dedicated Offshore Teams",
+      description:
+        "Teams are built specifically for your business, under your brand, aligned to your workflows.",
     },
     {
       icon: Building2,
-      title: "Recruitment Process Outsourcing",
-      description: "End-to-end recruitment solutions tailored to your organization's hiring needs.",
+      title: "Zero Infrastructure Cost",
+      description:
+        "No office space, no rent, no hardware. Your operations run without physical overhead.",
     },
     {
-      icon: HeadphonesIcon,
-      title: "HR Consulting",
-      description: "Strategic HR advisory services to optimize your talent management and organizational growth.",
+      icon: ListChecks,
+      title: "No Hiring or HR Burden",
+      description:
+        "We handle sourcing, screening, onboarding, HR, and management—end to end.",
     },
     {
-      icon: Settings,
-      title: "Offshore Development Support",
-      description: "Build and manage dedicated offshore development teams for your technology projects.",
-    },
-  ];
-
-  const industries = [
-    { icon: Code, name: "Information Technology" },
-    { icon: HeadphonesIcon, name: "BPO & Services" },
-    { icon: Heart, name: "Healthcare" },
-    { icon: DollarSign, name: "Finance & Banking" },
-    { icon: Wrench, name: "Engineering" },
-  ];
-
-  const features = [
-    {
-      icon: Zap,
-      title: "Fast Delivery",
-      description: "Quick turnaround time with pre-screened candidates ready to join within 48 hours.",
+      icon: TrendingUp,
+      title: "70%+ Cost Savings",
+      description:
+        "Streamlined offshore operations that dramatically reduce running costs.",
     },
     {
-      icon: Shield,
-      title: "Pre-Vetted Candidates",
-      description: "Thoroughly screened professionals with verified skills and background checks.",
+      icon: Headset,
+      title: "24×7 Global Coverage",
+      description:
+        "Support customers and projects across time zones with always-on teams.",
     },
     {
-      icon: MapPin,
-      title: "Pan-India Hiring",
-      description: "Access to talent pool across all major cities and tier-2 locations in India.",
-    },
-    {
-      icon: UserCheck,
-      title: "Dedicated HR Team",
-      description: "Assigned recruitment specialists who understand your unique hiring requirements.",
+      icon: BarChart3,
+      title: "Measurable Outcomes",
+      description:
+        "Weekly performance tracking, delivery metrics, and transparent reporting.",
     },
   ];
 
-  const testimonials = [
+  const howWeWork = [
     {
-      name: "Rajesh Kumar",
-      designation: "CTO, TechCorp Solutions",
-      text: "TalentBridge helped us scale our development team rapidly. Their quality of candidates and turnaround time is exceptional.",
+      step: "01",
+      title: "Understanding Your Business",
+      description:
+        "We dive into your hiring needs, operational load, and existing processes to understand how you work.",
     },
     {
-      name: "Priya Sharma",
-      designation: "HR Director, InnovateLabs",
-      text: "The best recruitment partner we've worked with. Professional, responsive, and truly understands our technical requirements.",
+      step: "02",
+      title: "Building Your Dedicated Team",
+      description:
+        "We assemble a tailored offshore team—HR, recruiters, billing, social media, developers, and more.",
     },
     {
-      name: "Amit Patel",
-      designation: "VP Engineering, CloudSoft",
-      text: "We've been working with TalentBridge for 3 years now. They consistently deliver high-quality IT professionals.",
+      step: "03",
+      title: "Seamless Integration",
+      description:
+        "Your offshore unit works like an extension of your in-house team with mirrored tools and workflows.",
+    },
+    {
+      step: "04",
+      title: "Reporting & Performance",
+      description:
+        "You get weekly reports, KPI tracking, and complete visibility into productivity and outcomes.",
+    },
+  ];
+
+  const onboarding = [
+    {
+      title: "Zero Learning Curve",
+      description:
+        "Teams are already trained on ATS, CRMs, ERPs, cloud tools, billing platforms, and collaboration systems.",
+    },
+    {
+      title: "White-Labeled Workforce",
+      description:
+        "Your offshore staff operates fully under your brand—they appear as part of your internal organisation.",
+    },
+    {
+      title: "Transparent Reporting",
+      description:
+        "Daily activity logs, weekly performance summaries, and monthly delivery insights keep you in control.",
+    },
+    {
+      title: "No Long-Term Lock-In",
+      description:
+        "Scale up or down anytime. You stay flexible without being stuck in rigid long-term contracts.",
     },
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero with background image */}
       <Hero />
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-light">
+      {/* Perks */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Our Services</h2>
-            <p className="text-lg text-black max-w-2xl mx-auto">
-              Comprehensive staffing solutions tailored to your business needs
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h2 className="text-3xl font-bold mb-3">
+              Perks of Collaborating with <span className="text-[#00CFE6]">TechRuitz</span>
+            </h2>
+            <p className="text-muted-foreground">
+              A complete offshore team built specifically for your company—HR, recruiters, social
+              media, billing, admin, customer support, delivery teams, and more.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {perks.map((perk) => (
+              <FeatureCard
+                key={perk.title}
+                icon={perk.icon}
+                title={perk.title}
+                description={perk.description}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Industries Served */}
-      <section className="py-20 bg-background">
+      {/* How We Work */}
+      <section className="py-16 bg-gradient-light">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Industries We Serve</h2>
-            <p className="text-lg text-black max-w-2xl mx-auto ">
-              Specialized recruitment across diverse sectors
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+            <div>
+              <h2 className="text-3xl font-bold mb-3">
+                How <span className="text-[#00CFE6]">We Work</span>
+              </h2>
+              <p className="text-muted-foreground max-w-xl">
+                From understanding your workflows to building a fully managed offshore operations
+                unit, every step is structured for clarity and speed.
+              </p>
+            </div>
+            <Link to="/services">
+              <Button variant="outline">View All Services</Button>
+            </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {industries.map((industry, index) => (
-              <div
-                key={index}
-                className="group flex flex-col items-center justify-center p-6 rounded-xl bg-secondary border border-border hover:bg-card hover:shadow-card hover:border-primary/30 transform hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300"
-              >
-                <industry.icon className="h-12 w-12 text-primary mb-3 transition-colors duration-300 group-hover:text-primary" />
-                <p className="text-sm font-medium text-center">{industry.name}</p>
-              </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {howWeWork.map((item) => (
+              <Card key={item.title} className="shadow-card border-border h-full">
+                <CardContent className="pt-6 space-y-3">
+                  <p className="text-xs font-semibold tracking-[0.2em] text-muted-foreground">
+                    {item.step}
+                  </p>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-light">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Why Choose Us</h2>
-            <p className="text-lg text-black max-w-2xl mx-auto ">
-              What sets us apart in IT recruitment
+      {/* Onboarding Difference + What We Need / What Rolls Out Next */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 grid lg:grid-cols-[3fr,2fr] gap-10 items-start">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">
+              What Makes Our <span className="text-[#00CFE6]">Onboarding Different?</span>
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              Your offshore team plugs into your operations with minimal ramp-up time, because we
+              handle the training, tools, and structure upfront.
             </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <FeatureCard key={index} {...feature} />
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">What Our Clients Say</h2>
-            <p className="text-lg text-muted-foreground">
-              Trusted by leading companies across India
-            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {onboarding.map((item) => (
+                <Card key={item.title} className="border-border h-full">
+                  <CardContent className="pt-5 space-y-2">
+                    <h3 className="text-sm font-semibold">{item.title}</h3>
+                    <p className="text-xs text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border rounded-xl p-6 hover:shadow-card hover:border-primary/30 transform hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300"
-              >
-                <Quote className="h-8 w-8 text-primary mb-4" />
-                <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.designation}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* CTA Banner */}
-      <section id="contact" className="gradient-primary py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4 bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
-            Need IT Talent? Let's Connect
-          </h2>
-          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
-            Get started with India's leading IT recruitment partner. Fast, reliable, and professional staffing solutions.
-          </p>
-          <Link to="/contact">
-            <Button size="lg" className="bg-[#ffffff] hover:bg-accent/90 text-accent-foreground group px-8 py-6 text-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
-              Contact Us Today
-            </Button>
-          </Link>
+          <Card className="shadow-card border-border">
+            <CardContent className="pt-6 space-y-4 text-sm text-muted-foreground">
+              <h3 className="text-lg font-semibold text-foreground">
+                What We Need From You
+              </h3>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Requirements and workflow details</li>
+                <li>Alignment on expectations and success metrics</li>
+                <li>Branding guidelines (logos, colors, tone)</li>
+                <li>Workload estimates and priorities</li>
+                <li>Reporting preferences and cadence</li>
+              </ul>
+
+              <h3 className="text-lg font-semibold text-foreground pt-4">
+                What Rolls Out Next
+              </h3>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Your offshore team goes live.</li>
+                <li>Operations start running faster and smoother.</li>
+                <li>You save on cost, time, and management overhead.</li>
+              </ul>
+
+              <p className="pt-2">
+                You stay focused on growth.{" "}
+                <span className="font-semibold text-foreground">We handle execution.</span>
+              </p>
+
+              <Link to="/get-started">
+                <Button className="mt-4 w-full gradient-primary">Get Started</Button>
+              </Link>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>

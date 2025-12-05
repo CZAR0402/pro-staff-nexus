@@ -1,204 +1,180 @@
-import { Target, Eye, Award, MapPin } from "lucide-react";
-import FeatureCard from "@/components/FeatureCard";
+// src/pages/About.tsx
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Globe2, MapPin, Target, Rocket, Users, FileText, BadgeCheck } from "lucide-react";
 
 const About = () => {
-  const values = [
-    {
-      icon: Target,
-      title: "Our Mission",
-      description: "To connect exceptional talent with leading organizations, creating mutually beneficial partnerships that drive success and innovation.",
-    },
-    {
-      icon: Eye,
-      title: "Our Vision",
-      description: "To be India's most trusted IT recruitment partner, known for quality, speed, and long-term client relationships.",
-    },
-    {
-      icon: Award,
-      title: "Our Values",
-      description: "Integrity, excellence, transparency, and commitment to delivering exceptional service in every engagement.",
-    },
-  ];
-
-  const leaders = [
-    {
-      name: "Sanjay Kumar",
-      designation: "Founder & CEO",
-      bio: "15+ years in IT recruitment with expertise in building high-performing teams for Fortune 500 companies.",
-    },
-    {
-      name: "Sanjay Kumar",
-      designation: "Founder & CEO",
-      bio: "15+ years in IT recruitment with expertise in building high-performing teams for Fortune 500 companies.",
-    },
-    {
-      name: "Sanjay Kumar",
-      designation: "Founder & CEO",
-      bio: "15+ years in IT recruitment with expertise in building high-performing teams for Fortune 500 companies.",
-    }
-  ];
-
-  const locationsData = [
-
-    {
-      city: "Hyderabad",
-      address: "Tech Park, Cyber City, Hyderabad - 500001",
-      isHQ: true,
-    },
- 
-  {
-      city: "Bangalore",
-      address: "Business Center, Andheri East, Bangalore - 560001",
-      isHQ: false,
-    },
-
-    {
-      city: "Mumbai",
-      address: "IT Hub, Hinjewadi Phase 1, Mumbai - 400069",
-      isHQ: false,
-    }
-  ];
-
   return (
     <div className="min-h-screen">
-      {/* Page Banner */}
+      {/* Banner */}
       <section className="gradient-hero text-primary-foreground py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About <span className="text-[#00CFE6]">IT Recruitment</span></h1>
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto bg-gradient-to-r from-white from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">
-            Your trusted partner in IT recruitment and staffing solutions across India
+        <div className="container mx-auto px-4 text-center max-w-3xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            About <span className="text-[#00CFE6]">TechRuitz</span>
+          </h1>
+          <p className="text-lg md:text-xl text-primary-foreground/90">
+            We were built to solve one simple problem — businesses spend too much time managing
+            operations instead of expanding them.
           </p>
         </div>
       </section>
 
-      {/* Company Overview */}
-      <section className="py-20 bg-background">
+      {/* Story & Who We Are */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Our Story</h2>
+            <p className="text-muted-foreground mb-4">
+              TechRuitz was founded to become the trusted partner that handles everything behind the scenes, so
+              companies can scale without limits. Instead of getting stuck in daily ops, leadership can
+              finally focus on strategy, growth, and innovation.
+            </p>
+            <p className="text-muted-foreground mb-4">
+              We specialise in building dedicated offshore teams that plug into your existing business as a
+              true extension of your in-house capabilities—across staffing, documentation, payroll, and
+              delivery support.
+            </p>
+            <p className="text-muted-foreground">
+              Our approach is simple:{" "}
+              <span className="font-semibold text-foreground">
+                people-centric, value-driven, technology-enabled.
+              </span>{" "}
+              We combine structured processes with flexible engagement models to keep you both efficient and
+              scalable.
+            </p>
+          </div>
+
+          <Card className="shadow-card border-border">
+            <CardContent className="pt-6 space-y-5">
+              <div>
+                <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                  <Users className="h-5 w-5 text-[#00CFE6]" />
+                  Who We Are
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  TechRuitz is a team of specialists across:
+                </p>
+                <ul className="list-disc list-inside text-sm text-muted-foreground mt-2 space-y-1">
+                  <li>IT Staffing & Talent Acquisition</li>
+                  <li>Recruitment Process Outsourcing (RPO)</li>
+                  <li>Project Documentation & Proposals</li>
+                  <li>Payroll & Compliance Management</li>
+                  <li>Offshore Development & Delivery Support</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                  <Target className="h-5 w-5 text-[#00CFE6]" />
+                  Our Mission
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Deliver unbeatable operational support so businesses can scale confidently and competitively
+                  in global markets.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                  <Rocket className="h-5 w-5 text-[#00CFE6]" />
+                  Our Vision
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  To provide global outsourcing comforts to tech companies everywhere—removing friction from
+                  growth with people-first, process-driven, and technology-enabled solutions.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Offices & Values */}
+      <section className="py-16 bg-gradient-light">
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+          <Card className="border-border shadow-card">
+            <CardContent className="pt-6 space-y-4">
+              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                <MapPin className="h-5 w-5 text-[#00CFE6]" />
+                Our Offices
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                We operate with a distributed yet tightly integrated presence:
+              </p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li>
+                  <span className="font-semibold text-foreground">
+                    India (Offshore HQ)
+                  </span>{" "}
+                  – Operations, staffing, delivery, and development.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">
+                    US / Canada / UK (Onshore Partners)
+                  </span>{" "}
+                  – Client relations, consulting, and account strategy.
+                </li>
+              </ul>
+              <p className="text-sm text-muted-foreground mt-2">
+                This onshore–offshore blend ensures you get global reach with local understanding.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-border">
+            <CardContent className="pt-6 space-y-4">
+              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                <Globe2 className="h-5 w-5 text-[#00CFE6]" />
+                Our Driving Force
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                We believe outsourcing isn&apos;t just about saving money—it&apos;s about creating a frictionless
+                engine that powers business growth.
+              </p>
+              <ul className="grid grid-cols-2 gap-2 text-sm text-muted-foreground mt-3">
+                <li className="flex items-center gap-2">
+                  <BadgeCheck className="h-4 w-4 text-[#00CFE6]" /> Efficiency
+                </li>
+                <li className="flex items-center gap-2">
+                  <BadgeCheck className="h-4 w-4 text-[#00CFE6]" /> Accuracy
+                </li>
+                <li className="flex items-center gap-2">
+                  <BadgeCheck className="h-4 w-4 text-[#00CFE6]" /> Reliability
+                </li>
+                <li className="flex items-center gap-2">
+                  <BadgeCheck className="h-4 w-4 text-[#00CFE6]" /> People
+                </li>
+                <li className="flex items-center gap-2">
+                  <BadgeCheck className="h-4 w-4 text-[#00CFE6]" /> Performance
+                </li>
+              </ul>
+              <p className="text-sm text-muted-foreground mt-3">
+                We manage the engine so you can drive the vision.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="bg-card rounded-2xl border border-border p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-card">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Who We Are</h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  TalentBridge is a leading IT recruitment and staffing company with over a decade of experience in connecting top talent with leading organizations across India. We specialize in IT, BPO, Engineering, Healthcare, and Finance sectors.
-                </p>
-                <p>
-                  Our team of experienced recruiters understands the unique challenges of hiring in today's competitive market. We leverage advanced screening processes, extensive networks, and industry expertise to deliver candidates who not only meet technical requirements but also align with your company culture.
-                </p>
-                <p>
-                  With a presence across major Indian cities and a database of over 50,000 pre-screened professionals, we're equipped to handle recruitment needs of any scale - from individual positions to large-scale team building.
-                </p>
-              </div>
+              <h3 className="text-2xl font-bold mb-2">
+                Ready to make TechRuitz your extended operations office?
+              </h3>
+              <p className="text-muted-foreground max-w-xl">
+                Let&apos;s design a dedicated offshore team aligned with your business model,
+                culture, and growth plans.
+              </p>
             </div>
-            <div className="bg-gradient-light rounded-2xl p-8 lg:p-12 shadow-card">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-primary flex-shrink-0">
-                    <span className="text-2xl font-bold text-primary-foreground">10+</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Years of Excellence</h3>
-                    <p className="text-sm text-muted-foreground">Serving clients since 2013</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-primary flex-shrink-0">
-                    <span className="text-2xl font-bold text-primary-foreground">5K+</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Successful Placements</h3>
-                    <p className="text-sm text-muted-foreground">Every year across India</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-primary flex-shrink-0">
-                    <span className="text-2xl font-bold text-primary-foreground">200+</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Enterprise Clients</h3>
-                    <p className="text-sm text-muted-foreground">Fortune 500 and startups</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission, Vision, Values */}
-      <section className="py-20 bg-gradient-light">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Our Foundation</h2>
-            <p className="text-lg text-muted-foreground">
-              The principles that guide everything we do
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 ">
-            {values.map((value, index) => (
-              <FeatureCard key={index} {...value} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Team */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Leadership Team</h2>
-            <p className="text-lg text-muted-foreground">
-              Meet the experts driving our success
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {leaders.map((leader, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-card transition-all"
-              >
-                <div className="h-64 bg-gradient-primary"></div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-1">{leader.name}</h3>
-                  <p className="text-sm text-primary font-medium mb-3">{leader.designation}</p>
-                  <p className="text-sm text-muted-foreground">{leader.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Office Locations */}
-      <section className="py-20 bg-gradient-light">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 from-20% to-[#00CFE6] to-100% bg-clip-text text-transparent">Our Locations</h2>
-            <p className="text-lg text-muted-foreground">
-              Serving clients across India with local expertise
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {locationsData.map((location, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border rounded-xl p-6 hover:shadow-card hover:border-primary/30 transform hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300"
-              >
-                <div className="flex items-start space-x-4 mb-4">
-                  <MapPin className="h-6 w-6 text-primary flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-lg">
-                      {location.city}
-                      {location.isHQ && (
-                        <span className="ml-2 text-xs bg-primary text-primary-foreground px-2 py-1 rounded">
-                          Headquarters
-                        </span>
-                      )}
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground">{location.address}</p>
-              </div>
-            ))}
+            <Link to="/get-started">
+              <Button size="lg" className="gradient-primary">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

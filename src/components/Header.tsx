@@ -7,14 +7,22 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
+  // const navItems = [
+  //   { name: "Home", path: "/" },
+  //   { name: "About Us", path: "/about" },
+  //   { name: "Our Services", path: "/services" },
+  //   { name: "Careers", path: "/careers" },
+  //   { name: "Contact", path: "/contact" },
+  // ];
+
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
+    { name: "About Us", path: "/about" },
+    { name: "Our Services", path: "/services" },
+    { name: "Data Security", path: "/data-security" },
+    { name: "Get Started", path: "/get-started" },
     { name: "Careers", path: "/careers" },
-    { name: "Contact", path: "/contact" },
   ];
-
   const isActive = (path: string) => location.pathname === path;
 
   return (
@@ -26,7 +34,7 @@ const Header = () => {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
               <Users className="h-6 w-6 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold text-foreground">IT Recruitment</span>
+            <span className="text-xl font-bold text-foreground">Techruitz</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -48,8 +56,8 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/contact">
-              <Button className="gradient-primary">Hire Talent</Button>
+            <Link to="/get-started">
+              <Button className="gradient-primary">Build My Offshore Team</Button>
             </Link>
           </div>
 
@@ -84,8 +92,8 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full gradient-primary">Hire Talent</Button>
+              <Link to="/get-started" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button className="w-full gradient-primary">Build My Offshore Team</Button>
               </Link>
             </nav>
           </div>
